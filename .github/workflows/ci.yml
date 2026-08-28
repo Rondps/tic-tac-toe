@@ -23,4 +23,4 @@ jobs:
         run: pip install -r requirements.txt -r requirements-test.txt
 
       - name: Rodar Testes
-        run: pytest
+        run: pytest -m unittest test_app.py

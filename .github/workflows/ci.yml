@@ -22,8 +22,8 @@ jobs:
       - name: Instalar dependencias
         run: pip install -r requirements.txt -r requirements-test.txt
 
-      # - name: Rodar Testes
-      #   run: pytest
+      - name: Rodar Testes
+        run: pytest
 
   build-and-push:
     name: CD - Build e push da imagem Docker
@@ -32,6 +32,7 @@ jobs:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     # a condição acima garante que Pull Requests NUNCA publicam imagem —
     # só um push direto na main dispara a publicação no Docker Hub
+    environment: DOCKERHUB                        # dá acesso aos secrets deste Environment
     steps:
       - name: Checkout do código
         uses: actions/checkout@v4

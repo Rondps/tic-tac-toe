@@ -1,6 +1,3 @@
-# import sys
-# sys.path.insert(0, '/mnt/c/Projects/ppi/tic-tac-toe')
-
 from app import check_winner, bot_move, reset_game
 
 
